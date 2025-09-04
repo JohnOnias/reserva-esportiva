@@ -2,13 +2,7 @@
 
 @section('content')
 
-
-
-
-
-
                
-
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
    <!-- Auth Section -->
@@ -26,7 +20,7 @@
                 <div class="card-body">
 
                     <!-- Login Form -->
-                    <form id="login-form">
+                    <!-- <form id="login-form">
                         <h2 class="h5 mb-4 fw-bold text-center">Acesse sua conta</h2>
 
                         <div class="mb-3">
@@ -62,17 +56,18 @@
                         <p class="text-center mt-3">Não tem uma conta?
                             <a href="#" id="switch-to-register" class="text-success fw-bold">Registre-se</a>
                         </p>
-                    </form>
+                    </form> -->
 
                     <!-- Register Form -->
-                    <form id="register-form" class="d-none">
+                    <form id="register-form" class="d-none" method="post">
+                        @csrf
                         <h2 class="h5 mb-4 fw-bold text-center">Crie sua conta</h2>
 
                         <div class="mb-3">
                             <label class="form-label">Nome Completo</label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                <input type="text" class="form-control" placeholder="Seu nome completo" required>
+                                <input type="text" class="form-control" placeholder="Seu nome completo" required name="nome">
                             </div>
                         </div>
 
@@ -80,7 +75,7 @@
                             <label class="form-label">Matrícula IFCE</label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-id-card"></i></span>
-                                <input type="text" class="form-control" placeholder="Sua matrícula" required>
+                                <input type="text" class="form-control" placeholder="Sua matrícula" required name='matricula'>
                             </div>
                         </div>
 
@@ -88,7 +83,7 @@
                             <label class="form-label">E-mail Institucional</label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                                <input type="email" class="form-control" placeholder="seu@email.ifce.edu.br" required>
+                                <input type="email" class="form-control" placeholder="seu@email.ifce.edu.br" required name="email">
                             </div>
                         </div>
 
@@ -96,14 +91,14 @@
                             <label class="form-label">Senha</label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                                <input type="password" class="form-control" placeholder="Crie uma senha" required>
+                                <input type="password" class="form-control" placeholder="Crie uma senha" required name="senha">
                                 <button class="btn btn-outline-secondary toggle-password" type="button">
                                     <i class="fas fa-eye"></i>
                                 </button>
                             </div>
                         </div>
 
-                        <div class="mb-3">
+                        <!-- <div class="mb-3">
                             <label class="form-label">Confirmar Senha</label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-lock"></i></span>
@@ -112,7 +107,7 @@
                                     <i class="fas fa-eye"></i>
                                 </button>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="form-check mb-3">
                             <input type="checkbox" class="form-check-input" id="accept-terms" required>
