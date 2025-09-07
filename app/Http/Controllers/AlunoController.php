@@ -55,12 +55,12 @@ class AlunoController extends Controller
                 ->first();
 
         if(!$aluno){
-            return redirect()->route('login')->with('error', 'Email ou senha incorretos');
+            return redirect()->route('telaLogin')->with('error', 'Email ou senha incorretos');
         }
 
     
 
-        return redirect()->route('login')->with('success', 'Usuário logado com sucesso');
+        return redirect()->route('telaLogin')->with('success', 'Usuário logado com sucesso');
 
         
     }
