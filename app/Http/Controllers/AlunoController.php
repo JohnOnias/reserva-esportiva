@@ -9,11 +9,15 @@ class AlunoController extends Controller
 {
     //
 
-    public function create(){
+    public function telaCadastro(){
         return view('user.cadastro');
     }
 
-    public function store(Request $request){
+    public function telaLogin(){
+        return view('user.login');
+    }
+
+    public function cadastrar(Request $request){
         $request -> validate([
             'nome' => 'required',
             'matricula' => 'required',
@@ -30,7 +34,35 @@ class AlunoController extends Controller
 
         $aluno->save();
 
-        return redirect()->route('cadastro')->with('success', 'Usuário Criado com Sucesso!'); //não aparece o exemplo
+        return redirect()->route('telaCadastro')->with('success', 'Usuário Criado com Sucesso!'); //não aparece o exemplo
+    }
+
+    public function validar(Request $request){
+        $request->validate([
+            'email' => 'required',
+            'senha' => 'required'
+        ]);
+
+        $email = $request->email;
+        $senha = $request->senha;
+
+        echo $email;
+
+        //vai executar a query
+        $aluno = Aluno::where('email', $email)
+                ->where('senha', $senha)
+                ->select('id')
+                ->first();
+
+        if(!$aluno){
+            return redirect()->route('login')->with('error', 'Email ou senha incorretos');
+        }
+
+    
+
+        return redirect()->route('login')->with('success', 'Usuário logado com sucesso');
+
+        
     }
 
     
