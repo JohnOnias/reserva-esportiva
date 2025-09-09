@@ -4,6 +4,7 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 <!-- Auth Section -->
 <section class="py-5">
@@ -53,16 +54,39 @@
                         </div>
                     </div>
 
+                    <!-- Campo de senha -->
                     <div class="mb-3">
-                        <label class="form-label">Senha</label>
-                        <div class="input-group">
-                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                            <input type="password" class="form-control" placeholder="Crie uma senha" required name="senha">
-                            <button class="btn btn-outline-secondary toggle-password" type="button">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                        </div>
+                    <label class="form-label">Senha</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                        <input type="password" class="form-control" placeholder="Crie uma senha" required name="senha">
+                        <button class="btn btn-outline-secondary toggle-password" type="button" aria-label="Mostrar ou ocultar senha">
+                        <i class="fas fa-eye"></i>
+                        </button>
                     </div>
+                    </div>
+
+                    <!-- Script para exibir/ocultar senha -->
+                    <script>
+                    document.querySelectorAll('.toggle-password').forEach(btn => {
+                        btn.addEventListener('click', function() {
+                        const input = this.parentElement.querySelector('input');
+                        const icon = this.querySelector('i');
+
+                        if (input.type === "password") {
+                            input.type = "text";
+                            icon.classList.remove("fa-eye");
+                            icon.classList.add("fa-eye-slash");
+                        } else {
+                            input.type = "password";
+                            icon.classList.remove("fa-eye-slash");
+                            icon.classList.add("fa-eye");
+                        }
+                        });
+                    });
+                    </script>
+
+
 
                     <div class="form-check mb-3">
                         <input type="checkbox" class="form-check-input" id="accept-terms" required>
