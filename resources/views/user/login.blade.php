@@ -22,6 +22,8 @@
 
     <section class="py-5">
         <div class="container">
+            <div class="card shadow rounded-4 mx-auto" style="max-width: 500px;">
+                <div class="card-body">
                     <!-- Login Form -->
                     <form id="login-form" method="POST">
                         @csrf
