@@ -42,7 +42,7 @@
       <!-- Coluna 1 -->
       <div class="col-md-3 mb-4">
         <h3 class="h5 fw-bold mb-3">IFCE Campus Cedro</h3>
-        <p class="text-white-50">Sistema de reservas esportivas</p>
+        <p class="text-white-50">Sistema de Reservas Esportivas</p>
       </div>
 
       <!-- Coluna 2 -->

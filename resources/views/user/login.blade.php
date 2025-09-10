@@ -33,7 +33,7 @@
                             <label for="login-email" class="form-label">E-mail</label>
                             <div class="input-group">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                <input type="email" class="form-control" id="login-email" placeholder="Sua matrícula ou e-mail" required name="email">
+                                <input type="email" class="form-control" id="login-email" placeholder="e-mail" required name="email">
                             </div>
                         </div>
 
