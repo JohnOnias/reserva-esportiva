@@ -16,6 +16,8 @@ class EquipamentoController extends Controller
     public function listarEquipamentos(){
         $equipamentos = Equipamento::all();
 
-        return view('equipamentos.equipaments', compact('equipamentos'));
+        return view('coordenacao.dashboard', compact('equipamentos'));
     }
+
+    
 }
