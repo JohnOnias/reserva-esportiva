@@ -65,5 +65,19 @@ class AlunoController extends Controller
         
     }
 
+    public function buscarAlunoPorMatricula($matricula){
+
+        #executa e procura o aluno;
+        $aluno = Aluno::where('matricula', $matricula)
+                ->select("id")
+                ->first();
+
+        if(!$aluno){
+            return null;
+        }
+
+        return $aluno->id;
+    }
+
     
 }

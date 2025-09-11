@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AlunoController::class, 'telaLogin']) ->name('telaLogin');
 Route::get('/create', [AlunoController::class, 'telaCadastro']) ->name('telaCadastro');
-Route::get('/home', [EquipamentoController::class, 'telaEmprestimo'])->name('home');
-Route::get("/dashboard", [EquipamentoController::class, 'listarEquipamentos']);
+Route::get('/dashboard', [EmprestimoController::class, 'telaEmprestimo'])->name('dashboard');
+Route::get("/dashboard", [EquipamentoController::class, 'listarEquipamentos'])->name('dashboard');
 
 Route::post('/', [AlunoController::class, 'validar'])->name('validate');
 Route::post('/create', [AlunoController::class, 'cadastrar'])->name('cadastro');

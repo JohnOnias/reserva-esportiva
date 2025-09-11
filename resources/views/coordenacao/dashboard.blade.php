@@ -1,6 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+
+@if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+@endif
 <div class="container my-4">
   <div class="row g-4">
     <nav class="col-lg-3">
@@ -176,10 +188,11 @@
 
           <div class="col-6 col-md-3">
             <label class="form-label small">Equipamento</label>
-            
+
             <select class="form-select form-select-sm" name="selecao_equipamento">
+                <option value=""></option>
                 @foreach($equipamentos as $equipamento)
-                  <option value="{{$equipamento->nome}}">{{$equipamento->nome}}</option>
+                  <option value="{{$equipamento->id}}">{{$equipamento->nome}}</option>
                   <!-- <option value="ping pong">Ping Pong</option>
                   <option value="volei">Vôlei</option>
                   <option value="basquete">Basquete</option> -->
@@ -188,11 +201,11 @@
           </div>
           <div class="col-6 col-md-3">
             <label class="form-label small">Horário Inicial</label>
-            <input type="time" class="form-control form-control-sm" name="data_inicial" />
+            <input type="datetime-local" class="form-control form-control-sm" name="data_inicial" />
           </div>
           <div class="col-6 col-md-3">
             <label class="form-label small">Horário Final</label>
-            <input type="time" class="form-control form-control-sm" name="data_final" />
+            <input type="datetime-local" class="form-control form-control-sm" name="data_final" />
           </div>
 
           <button class="btn btn-success d-flex align-items-center">
