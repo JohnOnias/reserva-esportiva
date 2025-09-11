@@ -13,6 +13,10 @@ class EmprestimoController extends Controller
         return view('coordenacao.dashboard');
     }
 
+    public function telaHistorico(){
+        return view('coordenacao.historico');
+    }
+
 
     public function fazerEmprestimo(Request $request){
 
